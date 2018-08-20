@@ -1,15 +1,17 @@
 module.exports =  {
   entry: './src/index.tsx',
   output: {
-    filename: './public/bundle.js'
+    path: __dirname + '/build',
+    filename: 'bundle.js'
   },
   devtool: 'eval',
   resolve: {
     extensions: ['.webpack.js', '.tsx', '.ts', '.js']
   },
   module: {
-    loaders: [
+    rules: [
       {test: /\.ts(x)?$/, loader: 'ts-loader'}
     ]
-  }
+  },
+  mode: 'development'
 };
