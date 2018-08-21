@@ -1,6 +1,7 @@
 import {h, render} from 'preact';
 import Router from 'preact-router';
 import {Home} from './home';
+import './main.css';
 
 const App = () => (
   <Router>
