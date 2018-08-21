@@ -13,5 +13,11 @@ module.exports =  {
       {test: /\.ts(x)?$/, loader: 'ts-loader'}
     ]
   },
-  mode: 'development'
+  mode: 'development',
+  watchOptions: {
+    ignored: [
+      '/node_modules',
+      '/build'
+    ]
+  }
 };
