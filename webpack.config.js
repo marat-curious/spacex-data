@@ -23,7 +23,7 @@ module.exports =  {
           fallback: 'style-loader',
           use: [
             {loader: 'css-loader', options: {importLoaders: 1}},
-            {loader: 'postcss-loader'}
+            {loader: 'postcss-loader', options: {sourceMap: true}}
           ],
           publicPath: path.join(__dirname, '/build')
         })
