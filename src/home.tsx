@@ -8,7 +8,7 @@ interface AppState {
   name: string
 }
 
-export class App extends Component<AppProps, AppState> {
+export class Home extends Component<AppProps, AppState> {
   constructor(props: AppProps) {
     super(props);
     this.state = {name: props.name};

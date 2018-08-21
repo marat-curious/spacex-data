@@ -1,4 +1,11 @@
 import {h, render} from 'preact';
-import {App} from './app';
+import Router from 'preact-router';
+import {Home} from './home';
 
-render(<App name="working" />, document.getElementById('root'));
+const App = () => (
+  <Router>
+    <Home path="/" name="working" />
+  </Router>
+);
+
+render(<App />, document.getElementById('root'));
