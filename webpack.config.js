@@ -1,7 +1,10 @@
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports =  {
   entry: './src/index.tsx',
   output: {
-    path: __dirname + '/build',
+    path: path.join(__dirname, '/build'),
     filename: 'bundle.js'
   },
   devtool: 'eval',
@@ -14,10 +17,15 @@ module.exports =  {
     ]
   },
   mode: 'development',
-  watchOptions: {
-    ignored: [
-      '/node_modules',
-      '/build'
-    ]
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, '/src/index.html')
+    })
+  ],
+  devServer: {
+    contentBase: path.join(__dirname, '/build'),
+    watchOptions: {
+      ignored: /node_modules/
+    }
   }
 };
