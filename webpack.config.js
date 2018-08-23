@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports =  {
-  entry: './src/index.tsx',
+  entry: './src/components/index.tsx',
   output: {
     path: path.join(__dirname, '/build'),
     filename: 'bundle.js'
@@ -18,7 +18,7 @@ module.exports =  {
       {test: /\.ts(x)?$/, loader: 'ts-loader'},
       {
         test: /\.css$/,
-        exclude: /node_modules/,
+        exclude: [/node_modules/],
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
@@ -27,7 +27,8 @@ module.exports =  {
           ],
           publicPath: path.join(__dirname, '/build')
         })
-      }
+      },
+      {test: /\.(svg|png|jpg|gif)$/, loader: 'file-loader'}
     ]
   },
   mode: 'development',
