@@ -1,12 +1,10 @@
 import {h, render} from 'preact';
 import Router from 'preact-router';
 import {Home} from './home';
-import './main.css';
+import '../styles/main.css';
 
-const App = () => (
+render((
   <Router>
     <Home path="/" name="working" />
   </Router>
-);
-
-render(<App />, document.getElementById('root'));
+), document.getElementById('root'));

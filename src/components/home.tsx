@@ -1,11 +1,12 @@
 import {h, Component} from 'preact';
+import {Header} from './header';
 
 export interface AppProps {
-  name: string
+  name: string;
 }
 
 interface AppState {
-  name: string
+  name: string;
 }
 
 export class Home extends Component<AppProps, AppState> {
@@ -14,6 +15,6 @@ export class Home extends Component<AppProps, AppState> {
     this.state = {name: props.name};
   }
   render(props: AppProps, state: AppState) {
-    return <h1>props: {props.name}, state: {state.name}</h1>;
+    return <div><Header /><h1>props: {props.name}, state: {state.name}</h1></div>;
   }
 }
