@@ -1,6 +1,6 @@
 import {h, render, Component} from 'preact';
 import Router from 'preact-router';
-import {Home} from './components/home';
+import {Launch} from './components/launch';
 import {fetchData} from './actions';
 import './styles/main.css';
 
@@ -27,7 +27,7 @@ class App extends Component<AppProps, AppState> {
   render() {
     return (
       <Router>
-        <Home path="/" data={this.state}/>
+        <Launch path="/" data={this.state}/>
       </Router>
     );
   }

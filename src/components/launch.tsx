@@ -7,7 +7,7 @@ export interface AppProps {
 
 export interface AppState {}
 
-export class Home extends Component<AppProps, AppState> {
+export class Launch extends Component<AppProps, AppState> {
   render(props: AppProps) {
     return (
       <div class="page page_home">
