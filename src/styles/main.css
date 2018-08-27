@@ -1,6 +1,14 @@
+@import './variables';
 @import './page';
+@import './header';
+
+@font-face {
+  font-family: 'Russo One';
+  src: url('../assets/fonts/RussoOne-Regular.ttf') format('truetype');
+}
 
 body {
   margin: 0;
   padding: 0;
+  font: 15px 'Russo One', sans-serif;
 }

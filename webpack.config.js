@@ -18,7 +18,7 @@ module.exports =  {
       {test: /\.ts(x)?$/, loader: 'ts-loader'},
       {
         test: /\.css$/,
-        exclude: [/node_modules/],
+        exclude: ['/node_modules/', '/assets/'],
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
@@ -28,7 +28,8 @@ module.exports =  {
           publicPath: '/'
         })
       },
-      {test: /\.(svg|png|jpg|gif)$/, loader: 'file-loader'}
+      {test: /\.(svg|png|jpg|gif)$/, loader: 'file-loader'},
+      {test: /\.(ttf)$/, loader: 'file-loader', options: {name: '[name].[ext]', outputPath: 'fonts/'}}
     ]
   },
   mode: 'development',

@@ -1,0 +1,22 @@
+.header {
+  display: grid;
+  grid-template-columns: $page-paddings [logo] $logo-width [nav] auto $page-paddings;
+  grid-template-rows: $page-paddings auto $page-paddings;
+  align-items: center;
+
+  &__logo {
+    grid-column: logo / logo;
+    grid-row: 2 / 2;
+  }
+  &__nav {
+    grid-column: nav / nav;
+    grid-row: 2 / 2;
+    justify-self: end;
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__nav-item {
+    display: block;
+    padding: .75em;
+  }
+}
