@@ -27,7 +27,7 @@ class App extends Component<AppProps, AppState> {
   render() {
     return (
       <Router>
-        <Home path="/" name="working" />
+        <Home path="/" data={this.state}/>
       </Router>
     );
   }
