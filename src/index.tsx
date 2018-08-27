@@ -8,28 +8,38 @@ export interface AppProps {}
 
 export interface AppState {
   data: {};
+  show: boolean;
+  error?: {};
 }
 
 class App extends Component<AppProps, AppState> {
+
   constructor() {
     super();
-    this.state = {data: {}};
+    this.state = {data: {}, show: false};
   }
+
   async componentDidMount() {
     try {
       const response = await fetchData();
       const data = await response.json();
-      this.setState({data});
+      this.setState({data, show: true});
     } catch(e) {
+      this.setState({data: {}, show: false, error: e});
       throw new Error(e);
     }
   }
+
   render() {
-    return (
-      <Router>
-        <Launch path="/" data={this.state}/>
-      </Router>
-    );
+    if (this.state.show) {
+      return (
+        <Router>
+          <Launch path="/" data={this.state.data}/>
+        </Router>
+      );
+    } else {
+      return <div>Loading...</div>;
+    }
   }
 }
 
