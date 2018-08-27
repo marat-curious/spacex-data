@@ -3,14 +3,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports =  {
-  entry: './src/components/index.tsx',
+  entry: './src/index.tsx',
   output: {
     path: path.join(__dirname, '/build'),
     filename: 'bundle.js'
   },
   devtool: 'eval',
   resolve: {
-    extensions: ['.webpack.js', '.tsx', '.ts', '.js']
+    extensions: ['.tsx', '.ts', '.js']
   },
   module: {
     rules: [
