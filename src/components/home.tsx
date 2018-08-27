@@ -15,6 +15,11 @@ export class Home extends Component<AppProps, AppState> {
     this.state = {name: props.name};
   }
   render(props: AppProps, state: AppState) {
-    return <div><Header /><h1>props: {props.name}, state: {state.name}</h1></div>;
+    return (
+      <div class="page page_home">
+        <Header />
+        <h1>props: {props.name}, state: {state.name}</h1>
+      </div>
+    );
   }
 }

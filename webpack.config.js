@@ -25,7 +25,7 @@ module.exports =  {
             {loader: 'css-loader', options: {importLoaders: 1}},
             {loader: 'postcss-loader', options: {sourceMap: true}}
           ],
-          publicPath: path.join(__dirname, '/build')
+          publicPath: '/'
         })
       },
       {test: /\.(svg|png|jpg|gif)$/, loader: 'file-loader'}
