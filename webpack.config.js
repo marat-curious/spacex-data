@@ -1,4 +1,5 @@
 const path = require('path');
+const SizePlugin = require('size-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
@@ -39,7 +40,8 @@ module.exports =  {
     }),
     new ExtractTextPlugin({
       filename: 'main.css'
-    })
+    }),
+    new SizePlugin(),
   ],
   devServer: {
     contentBase: path.join(__dirname, '/build'),
