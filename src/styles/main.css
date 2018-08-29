@@ -1,6 +1,7 @@
 @import './variables';
 @import './page';
 @import './header';
+@import './chart';
 
 @font-face {
   font-family: 'Russo One';
