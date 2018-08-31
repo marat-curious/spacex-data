@@ -15,12 +15,23 @@ interface ChartProps {
 interface ChartState {
 }
 
+interface MarginClass {
+  top: number;
+  right: number;
+  bottom: number;
+  left: number;
+}
+
 export class LaunchSuccessByYearChart extends Component<ChartProps, ChartState> {
   
+  readonly margin: MarginClass;
+
   constructor(props: ChartProps) {
     super(props);
     this.xAxis = this.xAxis.bind(this);
     this.yAxis = this.yAxis.bind(this);
+    this.margin = {top: 20, right: 20, bottom: 20, left: 20};
+
   }
 
   x() {
@@ -43,6 +54,7 @@ export class LaunchSuccessByYearChart extends Component<ChartProps, ChartState> 
 
   xAxis(g) {
     return g
+      .attr('transform', `translate(0, ${this.props.height})`)
       .call(d3.axisBottom(this.x()))
     ;
   }
@@ -57,6 +69,8 @@ export class LaunchSuccessByYearChart extends Component<ChartProps, ChartState> 
     const g = d3
       .select(node)
       .append('g')
+        .attr('transform', `translate(${this.margin.left}, ${this.margin.top})`)
+        
     ;
     g.append('g')
       .call(this.xAxis)
@@ -70,8 +84,8 @@ export class LaunchSuccessByYearChart extends Component<ChartProps, ChartState> 
     return (
       <div class="chart chart_launch-sucess-by-year">
         <svg
-          width={this.props.width}
-          height={this.props.height}
+          width={this.props.width + (this.margin.left + this.margin.right)}
+          height={this.props.height + (this.margin.top + this.margin.bottom)}
           ref={node => this.group(node)}
         />
       </div>
