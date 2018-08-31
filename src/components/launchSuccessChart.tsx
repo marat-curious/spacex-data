@@ -15,7 +15,7 @@ interface ChartState {
 
 
 function Arc(props: ChartProps) {
-  const colors = ['#ED6A5A', '#F4F1BB', '#9BC1BC', '#5CA4A9', '#E6EBE0'];
+  const colors = ['#4FBC9A', '#E4DA90', '#5CA4A9', '#7ED137', '#A0CA9A', '#73A2B1', '#E47773'];
   const radius = Math.min(props.width, props.height)/4;
   const values = props.data.map(item => item.count);
   const label = props.data.map(item => item.label);
