@@ -46,7 +46,7 @@ export class LaunchSuccess extends Component<CompProps, CompState> {
 
   render(props: CompProps) {
     return (
-      <div>
+      <div class="chart">
         <LaunchSuccessChart
           width={300}
           height={300}

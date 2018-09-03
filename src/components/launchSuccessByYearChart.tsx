@@ -104,7 +104,7 @@ export class LaunchSuccessByYearChart extends Component<ChartProps, ChartState> 
 
   render() {
     return (
-      <div class="chart chart_launch-sucess-by-year">
+      <div class="chart__launch-sucess-by-year">
         <svg
           width={this.props.width + (this.margin.left + this.margin.right)}
           height={this.props.height + (this.margin.top + this.margin.bottom)}

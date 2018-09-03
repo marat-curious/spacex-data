@@ -70,7 +70,7 @@ function Arc(props: ChartProps) {
 export class LaunchSuccessChart extends Component<ChartProps, ChartState> {
   render(props: ChartProps) {
     return (
-      <div class="chart chart_launch-success">
+      <div class="chart__launch-success">
         <svg width={props.width} height={props.height}>
           <Arc width={props.width} height={props.height} data={props.data} />
         </svg>

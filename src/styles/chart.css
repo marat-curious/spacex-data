@@ -1,3 +1,18 @@
 .chart {
+  display: grid;
+  grid-template-columns: $page-paddings auto auto $page-paddings;
+  grid-template-rows: auto;
+  align-items: center;
+
   font: 13px arial, sans-serif;
+
+  &__launch-success {
+    grid-column: 2 / 2;
+    grid-row: 1 / 1;
+  }
+
+  &__launch-sucess-by-year {
+    grid-column: 3 / 3;
+    grid-row: 1 / 1;
+  }
 }
