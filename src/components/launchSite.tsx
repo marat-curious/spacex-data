@@ -34,7 +34,13 @@ export class LaunchSite extends Component<CompProps, CompState> {
 
   render(props: CompProps) {
     return (
-      <div />
+      <div class="chart">
+        <LaunchSiteChart
+          width={400}
+          height={300}
+          data={this.normalize(props.data)}
+        />
+      </div>
     );
   }
 }
